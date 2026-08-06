@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>Hoisting and Prototypal Inheritance</title>
+</head>
+<body>
+
+
+    <script>
+
+        function User(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        User.prototype.login = function() {
+            console.log( this.name + " logged in");
+        }
+
+        User.prototype.logout = function() {
+            console.log( this.name + " logged out");
+        }
+
+
+        function Admin(name, age, role) {
+            User.call(this, name, age);
+            this.role = role;
+        }
+
+        Admin.prototype = Object.create(User.prototype);
+
+        Admin.prototype.constructor = Admin;
+
+        Admin.prototype.showRole = function() {
+            console.log(this.name + " is a " + this.role);
+        }
+
+        const user1 = new User(
+            "Riya",
+            20
+        );
+
+
+        const user2 = new User(
+            "Vihan",
+            25
+        );
+
+
+
+        const admin1 = new Admin(
+            "Shiva",
+            25,
+            "Manager"
+        );
+
+
+        const admin2 = new Admin(
+            "Ramesh",
+            30,
+            "Admin"
+        );
+
+
+        user1.login();
+        user1.logout();
+        user2.login();
+        user2.logout();
+
+        admin1.login();
+        admin1.logout();
+        admin1.showRole();
+
+        admin2.showRole();
+
+
+
+
+    </script>
+
+</body>
+
+</html>
