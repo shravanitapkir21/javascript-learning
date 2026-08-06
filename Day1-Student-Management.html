@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Student Management Script</title>
+    </head>
+    <body>
+        <script>
+            const students = [
+                {
+                    name: "Raj",
+                    college: "MIT",
+                    branch: "IT",
+                    rollno: 2330
+                },
+                {
+                    name: "Ravi",
+                    college: "VIT",
+                    branch: "CSE",
+                    rollno: 2309
+                }
+            ];
+            
+            
+            const {name, college, branch, rollno} = students[1];
+            console.log(name);
+            console.log(college);
+            console.log(branch);
+            console.log(rollno);
+
+            const newStudent = {
+                name: "Ramesh",
+                college: "Zeal",
+                branch: "ECE",
+                rollno: 2345
+            };
+            
+            const updatedStudents = [...students, newStudent];
+            console.log(updatedStudents);
+
+            const displayStudent = (student) => {
+                console.log(`Name: ${student.name}, College: ${student.college}, Branch: ${student.branch}, Roll No: ${student.rollno}`);
+            };
+
+            displayStudent(students[0]);
+            displayStudent(students[1]);
+            displayStudent(newStudent);
+
+
+
+
+
+        </script>
+    </body>
+</html>

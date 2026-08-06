@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Closure Counter</title>
+    
+    </head>
+    <body>      
+
+    <script>
+
+        function counter() {
+            let count = 0;
+
+            function increment() {
+                count++;
+            }
+
+            function getCounterValue() {
+                return count;
+            }
+
+            return {
+                increment,
+                getCounterValue
+            };
+        }
+
+
+            const myCounter = counter();
+            myCounter.increment();
+            myCounter.increment();
+            myCounter.increment();
+            myCounter.increment();
+
+
+
+            console.log(myCounter.getCounterValue());
+
+            
+        
+
+
+
+    </script>
+    </body> 
+</html>

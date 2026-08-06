@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Product Data Processor</title>
+    </head>
+    <body>
+        <script>
+
+                const products = [
+                    {
+                        id: 1,
+                        name: "Notebook",
+                        price: 80,
+                        brand: "Classmate"
+                    },
+                    {
+                        id: 2,
+                        name: "Ball Pen",
+                        price: 20,
+                        brand: "Cello"
+                    },
+                    {
+                        id: 3,
+                        name: "Pencil",
+                        price: 10,
+                        brand: "Apsara"
+                    },
+                    {
+                        id: 4,
+                        name: "Calculator",
+                        price: 650,
+                        brand: "Casio"
+                    }
+                ];
+                console.log(products);
+
+                //map()
+
+                const productNames = products.map((product) => {
+                    return product.name;
+                });
+                console.log(productNames);
+
+                //filter()
+                const expensiveProducts = products.filter((product) => {
+                    return product.price > 50;
+                });
+                console.log(expensiveProducts);
+
+
+                //reduce()
+                const totalPrice = products.reduce((total,product) => {
+                    return total + product.price;
+                }, 0);
+                console.log(totalPrice);
+
+                //find()
+                const productByBrand = products.find((product) => {
+                    return product.brand === "Casio";
+                });
+                console.log(productByBrand);
+
+                
+            </script>
+    </body>
+</html>
