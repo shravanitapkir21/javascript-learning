@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title> Day 6 </title>
+
+    </head>
+
+    <body>
+        <h1>Promise User Data</h1>
+        <script>
+    function fetchUser() {
+        return new Promise( function(resolve, reject) {
+
+            setTimeout(function() {
+                const success = true;
+                 if(success) {
+                    resolve({
+                            id: "1",
+                            name: "Shravani",
+                            email: "shravani11@gmail.com"
+                        });
+                 } else {
+                    reject("Unable to fetch user data.");
+                 }
+                
+                
+                },2000);
+
+        });
+
+    }
+
+    fetchUser()
+
+    .then(function(user){
+        console.log("-- User Data--");
+
+        console.log("ID:", user.id);
+        console.log("Name:", user.name);
+        console.log("Email:", user.email);
+    
+    })
+
+    .catch(function(error) {
+        console.log("Error: ", error);
+
+    });
+
+
+</script>
+</body>
+
+</html>
